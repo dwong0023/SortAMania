@@ -1,8 +1,6 @@
 
-public abstract class SortCompetition implements Comparable <SortCompetition> {
-	
-	
-	
+public abstract class SortCompetition {
+
 	int number;
 	double totalTime = 0.0;
 	
