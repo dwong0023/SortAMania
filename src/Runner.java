@@ -4,7 +4,7 @@ public class Runner {
     public static String[] stringarr = new String[10000];
     public static int[] bigarr = new int[100000];
     public static int[][] dblintarr = new int[1000][100];
-    public static int[] mysteryarr = new int[10000];
+    public static Comparable[] mysteryarr = new Comparable[10000];
 
     String[] x = {"lul","hah","memes","destruction","Bob Ross","is THE LORD"};
 
@@ -13,10 +13,10 @@ public class Runner {
         Team9SortCompetition sorter = new Team9SortCompetition();
         arraysetup();
         System.out.println(sorter.challengeOne(intarr));
-        System.out.println(sorter.challengeTwo(stringarr, x));
+        System.out.println(sorter.challengeTwo(stringarr, "apples"));
         System.out.println(sorter.challengeThree(bigarr));
         System.out.println(sorter.challengeFour(dblintarr));
-        System.out.println(sorter.challengeFive(mysteryarr, x));
+        System.out.println(sorter.challengeFive(mysteryarr, 586));
     }
 
     public static void arraysetup()
