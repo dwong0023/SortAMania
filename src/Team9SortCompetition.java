@@ -44,41 +44,74 @@ public class Team9SortCompetition extends SortCompetition {
 
     @Override
     public int challengeThree(int[] arr) {
-
-        public static void quicksort(int[] arr, int left, int right)
-        {
-            if(left < right)
-            {
-                int pivot = partition(arr,left,right);
-                quicksort(arr, left,pivot -1);
-                quicksort(arr, pivot + 1, right);
-            }
-        }
-        public static int partition(int[]arr, int left, int right)
-        {
-            int pivot = arr[right];
-            int i = left - 1;
-            for(int j = left; j < right; j++)
-            {
-                if(arr[j] < pivot)
-                {
-                    i++;
-                    int temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
-                }
-            }
-            int temp = arr[right];
-            arr[right] = arr[i+1];
-            arr[i+1] = temp;
-            return i+1;
-        }
-    return 0;
+        quicksort(arr,0,arr.length-1);
+        return arr[(arr.length-1)/2];
     }
+    public static void quicksort(int[] arr, int left, int right)
+    {
+        if(left < right)
+        {
+            int pivot = partition(arr,left,right);
+            quicksort(arr, left,pivot -1);
+            quicksort(arr, pivot + 1, right);
+        }
+    }
+    public static int partition(int[]arr, int left, int right)
+    {
+        int pivot = arr[right];
+        int i = left - 1;
+        for(int j = left; j < right; j++)
+        {
+            if(arr[j] < pivot)
+            {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[right];
+        arr[right] = arr[i+1];
+        arr[i+1] = temp;
+        return i+1;
+    }
+
+
 
     @Override
     public int challengeFour(int[][] arr) {
-        return 0;
+        int[] temparray = new int[1000000];
+        for(int i = 0; i < 1000000;i++)
+        {
+            for(int k = 0; k < 1000;k++)
+            {
+                temparray[i] = arr[i][k];
+            }
+        }
+        //ev in temparray should be an array, this adds all to one single arr
+        int[] smallarr1 = new int[1000];
+        int[] smallarr2 = new int[1000];
+        for(int outerarr = 0; outerarr < 1000;outerarr++)
+        {
+            smallarr1[outerarr] = temparray[outerarr];
+
+        }
+        quicksort(smallarr1,0,arr.length-1);
+        for(int innerarr = 0; innerarr < 1000;innerarr++)
+        {
+            smallarr2[innerarr] = temparray[1000+innerarr];
+            quicksort(arr[innerarr],0,arr.length-1);
+        }
+        //trying to divide the separate arrays
+
+        int[] arrmedians = new int[1000];
+        for(int k = 0; k < 1000;k++)
+        {
+            int[] temp = new int[1000];
+            temp[k] = smallarr1[k];
+            arrmedians[k] = smallarr1[(k-1)/2];
+        }
+        quicksort(arrmedians,0,arr.length-1);
     }
 
     @Override
