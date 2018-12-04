@@ -112,6 +112,8 @@ public class Team9SortCompetition extends SortCompetition {
             arrmedians[k] = smallarr1[(k-1)/2];
         }
         quicksort(arrmedians,0,arr.length-1);
+        int median = arr[(999)/2][(999)/2][5/2];
+        return median;
     }
 
     @Override
