@@ -20,7 +20,7 @@ public class Team9SortCompetition extends SortCompetition {
             }
         }
 
-        return arr[4999];
+        return (arr[4999]+ arr[5000])/2;
     }
 
     @Override
@@ -36,7 +36,6 @@ public class Team9SortCompetition extends SortCompetition {
         for(int m = 0; m < arr.length; m++){
             if(arr[m].indexOf("query") > 0){
                 return arr[m].indexOf("query");
-                break;
             }
         }
         return -1;
@@ -80,6 +79,8 @@ public class Team9SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFour(int[][] arr) {
+        //I'm trying to figure this out but it's tough...... Because its an array of 1001 numbers (1-1000 + position 0)
+        // we have to calculate median by adding index 499+500 and dividing by 2.
         int[] temparray = new int[1000000];
         for(int i = 0; i < 1000000;i++)
         {
