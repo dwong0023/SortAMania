@@ -120,8 +120,25 @@ public class Team9SortCompetition extends SortCompetition {
 
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
+        int j=0;
+        while(j<10000)
+        {
+            int checker = arr[j].compareTo(query);
+            if(checker == 0)
+            {
+                return j;
+            }
+            else if(checker == -1)
+            {
+                return -1;
+            }
+            else {
+                j++;
+            }
+        }
         return 0;
     }
+
 
     @Override
     public String greeting() {
