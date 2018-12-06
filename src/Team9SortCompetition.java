@@ -82,7 +82,7 @@ public class Team9SortCompetition extends SortCompetition {
         //I'm trying to figure this out but it's tough...... Because its an array of 1001 numbers (1-1000 + position 0)
         // we have to calculate median by adding index 499+500 and dividing by 2.
         int[] temparray = new int[1000000];
-        for(int i = 0; i < 1000000;i++)
+        for(int i = 0; i < 1000;i++)
         {
             for(int k = 0; k < 1000;k++)
             {
@@ -98,11 +98,13 @@ public class Team9SortCompetition extends SortCompetition {
 
         }
         quicksort(smallarr1,0,arr.length-1);
+        int firstmed = smallarr1[999/2];
         for(int innerarr = 0; innerarr < 1000;innerarr++)
         {
             smallarr2[innerarr] = temparray[1000+innerarr];
             quicksort(arr[innerarr],0,arr.length-1);
         }
+        int secmed = smallarr2[999/2];
         //trying to divide the separate arrays
 
         int[] arrmedians = new int[1000];
@@ -113,7 +115,7 @@ public class Team9SortCompetition extends SortCompetition {
             arrmedians[k] = smallarr1[(k-1)/2];
         }
         quicksort(arrmedians,0,arr.length-1);
-        int median = arr[(999)/2][(999)/2][5/2];
+        int median = arr[999/2][999/2];
         return median;
     }
 

@@ -3,7 +3,7 @@ public class Runner {
     public static int[] intarr = new int[10000];
     public static String[] stringarr = new String[10000];
     public static int[] bigarr = new int[100000];
-    public static int[][] dblintarr = new int[1000][100];
+    public static int[][] dblintarr = new int[1000][1000];
     public static Comparable[] mysteryarr = new Comparable[10000];
 
     String[] x = {"lul","hah","memes","destruction","Bob Ross","is THE LORD"};
