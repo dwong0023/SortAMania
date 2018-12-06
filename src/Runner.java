@@ -16,7 +16,7 @@ public class Runner {
         System.out.println(sorter.challengeTwo(stringarr, "apples"));
         System.out.println(sorter.challengeThree(bigarr));
         System.out.println(sorter.challengeFour(dblintarr));
-        System.out.println(sorter.challengeFive(mysteryarr, 586));
+        System.out.println(sorter.challengeFive(mysteryarr, mysteryarr[5]));
     }
 
     public static void arraysetup()

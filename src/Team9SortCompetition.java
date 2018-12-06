@@ -121,20 +121,21 @@ public class Team9SortCompetition extends SortCompetition {
     @Override
     public int challengeFive(Comparable[] arr, Comparable query) {
         int j=0;
+        int checker = 0;
         while(j<10000)
         {
-            int checker = arr[j].compareTo(query);
+            checker = arr[j].compareTo(query);
             if(checker == 0)
             {
                 return j;
             }
-            else if(checker == -1)
-            {
-                return -1;
-            }
             else {
                 j++;
             }
+        }
+        if(checker == -1)
+        {
+            return -1;
         }
         return 0;
     }
