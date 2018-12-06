@@ -81,34 +81,41 @@ public class Team9SortCompetition extends SortCompetition {
     public int challengeFour(int[][] arr) {
         //I'm trying to figure this out but it's tough...... Because its an array of 1001 numbers (1-1000 + position 0)
         // we have to calculate median by adding index 499+500 and dividing by 2.
-        int[] temparray = new int[1000000];
-        for(int i = 0; i < 1000;i++)
+        int[] temparray = new int[arr.length];
+        for(int i = 0; i < arr.length;i++)
         {
-            for(int k = 0; k < 1000;k++)
-            {
-                temparray[i] = arr[i][k];
-            }
+                quicksort(arr[i], 0, arr[i].length-1);
+                temparray[i] = arr[i][arr[i].length/2 - 1];
         }
+        quicksort(temparray,0, temparray.length -1);
+        return temparray[temparray.length/2 -1];
         //ev in temparray should be an array, this adds all to one single arr
-        int[] smallarr1 = new int[1000];
+        /*int[] smallarr1 = new int[1000];
         int[] smallarr2 = new int[1000];
         for(int outerarr = 0; outerarr < 1000;outerarr++)
         {
             smallarr1[outerarr] = temparray[outerarr];
+
         }
         quicksort(smallarr1,0,arr.length-1);
-        int firstmed = smallarr1[999/2];
         for(int innerarr = 0; innerarr < 1000;innerarr++)
         {
-            smallarr2[innerarr] = temparray[999+innerarr];
+            smallarr2[innerarr] = temparray[1000+innerarr];
+            quicksort(arr[innerarr],0,arr.length-1);
         }
-        quicksort(smallarr2,0,arr.length-1);
-        int secmed = smallarr2[999/2];
-
         //trying to divide the separate arrays
 
-        int median = arr[999/2][999/2];
+        int[] arrmedians = new int[1000];
+        for(int k = 0; k < 1000;k++)
+        {
+            int[] temp = new int[1000];
+            temp[k] = smallarr1[k];
+            arrmedians[k] = smallarr1[(k-1)/2];
+        }
+        quicksort(arrmedians,0,arr.length-1);
+        int median = arr[(999)/2][(999)/2][5/2];
         return median;
+        */
     }
 
     @Override
