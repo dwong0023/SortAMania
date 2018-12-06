@@ -95,26 +95,18 @@ public class Team9SortCompetition extends SortCompetition {
         for(int outerarr = 0; outerarr < 1000;outerarr++)
         {
             smallarr1[outerarr] = temparray[outerarr];
-
         }
         quicksort(smallarr1,0,arr.length-1);
         int firstmed = smallarr1[999/2];
         for(int innerarr = 0; innerarr < 1000;innerarr++)
         {
-            smallarr2[innerarr] = temparray[1000+innerarr];
-            quicksort(arr[innerarr],0,arr.length-1);
+            smallarr2[innerarr] = temparray[999+innerarr];
         }
+        quicksort(smallarr2,0,arr.length-1);
         int secmed = smallarr2[999/2];
+
         //trying to divide the separate arrays
 
-        int[] arrmedians = new int[1000];
-        for(int k = 0; k < 1000;k++)
-        {
-            int[] temp = new int[1000];
-            temp[k] = smallarr1[k];
-            arrmedians[k] = smallarr1[(k-1)/2];
-        }
-        quicksort(arrmedians,0,arr.length-1);
         int median = arr[999/2][999/2];
         return median;
     }
